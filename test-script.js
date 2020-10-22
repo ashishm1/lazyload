@@ -25,7 +25,7 @@ function handler(data) {
 }
 
 
-fetch('https://cors-anywhere.herokuapp.com/https://2baea5f37579.ngrok.io/api/lazyload?shop=shop=sample-store-15.myshopify.com')
+fetch('https://cors-anywhere.herokuapp.com/https://af4de64e4deb.ngrok.io/api/lazyload?shop=shop=sample-store-15.myshopify.com')
     .then(res => res.json())
     .then(data => {
         handler(data.data)
