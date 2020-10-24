@@ -1,11 +1,10 @@
 const script = document.createElement('script');
 script.src = "https://code.jquery.com/jquery-3.5.1.min.js";
-//script.type = "text/javascript";
+script.type = "text/javascript";
 console.log("From Jsdeliver")
 script.onreadystatechange = handler();
-// script.displayscope = "ALL"
+script.onload = handler();
 document.getElementsByTagName('head')[0].appendChild(script)
-//script.onload = handler();
 
 
 
@@ -29,11 +28,12 @@ function handler() {
         console.log("In next arrow")
         $('a.btn--narrow').attr("id", "LazyLoader-Pagination")
     }
+
+
+
+// fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
+//     .then(res => res.json())
+//     .then(console.log("Fetched"))
+//     .then(handler())
+//     .catch(error => console.log(error))
 }
-
-
-fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
-    .then(res => res.json())
-    .then(console.log("Fetched"))
-    .then(handler())
-    .catch(error => console.log(error))
