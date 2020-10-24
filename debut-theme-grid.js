@@ -1,7 +1,7 @@
 const script = document.createElement('script');
 script.src = "https://code.jquery.com/jquery-3.5.1.min.js";
 //script.type = "text/javascript";
-console.log("In debut script")
+console.log("From Jsdeliver")
 script.onreadystatechange = handler;
 // script.displayscope = "ALL"
 document.getElementsByTagName('head')[0].appendChild(script)
@@ -35,10 +35,8 @@ function handler() {
 }
 
 
-// fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
-//     .then(res => res.json())
-//     .then(console.log("Fetched"))
-//     .then(data => {
-//         handler()
-//     })
-//     .catch(error => console.log(error))
+fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
+    .then(res => res.json())
+    .then(console.log("Fetched"))
+    .then(handler())
+    .catch(error => console.log(error))
