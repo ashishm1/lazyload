@@ -1,15 +1,15 @@
-const script = document.createElement('script');
-script.src = "https://code.jquery.com/jquery-3.5.1.min.js";
-//script.type = "text/javascript";
-console.log("From Jsdeliver")
-script.onreadystatechange = handler;
-// script.displayscope = "ALL"
-document.getElementsByTagName('head')[0].appendChild(script)
-// script.onload = handler();
 
-// function makeHeader(data) {
-    
-// }
+
+function makeScript() {
+    const script = document.createElement('script');
+    script.src = "https://code.jquery.com/jquery-3.5.1.min.js";
+    //script.type = "text/javascript";
+    console.log("From Jsdeliver")
+    //script.onreadystatechange = handler;
+    // script.displayscope = "ALL"
+    document.getElementsByTagName('head')[0].appendChild(script)
+    //script.onload = handler();
+}
 
 
 function handler() {
@@ -17,8 +17,8 @@ function handler() {
     console.log("This is debut theme api!!!!!!!")
 
     const head = $('head');
-    head.appendChild(`<script>document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`);
-    head.appendChild(`<script src="https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937" type="text/javascript"></script>`);
+    head.append(`<script>document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`);
+    head.append(`<script src="https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937" type="text/javascript"></script>`);
     if($('ul.grid').length > 0) {
         console.log("In ul grid")
         $('ul.grid').attr("id", "LazyLoader-Loop");
@@ -38,5 +38,6 @@ function handler() {
 fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
     .then(res => res.json())
     .then(console.log("Fetched"))
+    .then(makeScript)
     .then(handler())
     .catch(error => console.log(error))
