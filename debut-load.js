@@ -18,11 +18,24 @@ catch(err){
 
 
 function handlertag() {
+    try{
+        console.log("This is debut theme api!!!!!!!")
+        const lazyscript = document.createElement('script');
+        lazyscript.src = "https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937";
+        lazyscript.type = "text/javascript";
+        lazyscript.onreadystatechange = addAjax;
+        lazyscript.onload = addAjax;
+        document.getElementsByTagName('head')[0].appendChild(lazyscript);
+        console.log("handlerTag completed");
+    }
+    catch(err){
+        console.log(err);
+        addAjax();
+    }
+    }
 
-    console.log("This is debut theme api!!!!!!!")
-
-    const head = $('head');
-    head.append(`<script src="https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937" type="text/javascript"></script>`);
+function addAjax(){
+    console.log("In addAjax function")
     $('body').append(`<script>window.addEventListener("load", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`)
     if($('ul.grid').length > 0) {
         console.log("In ul grid")
@@ -36,7 +49,7 @@ function handlertag() {
     else if ($('a.btn--narrow').length > 0 ) {
         console.log("In next arrow")
         $('a.btn--narrow').parent().attr("id", "LazyLoader-Pagination")
-    }
+}
 }
 
 
