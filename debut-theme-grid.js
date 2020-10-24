@@ -1,10 +1,10 @@
-const script = document.createElement('script');
-script.src = "https://code.jquery.com/jquery-3.5.1.min.js";
-script.type = "text/javascript";
+const script2 = document.createElement('script');
+script2.src = "https://code.jquery.com/jquery-3.5.1.min.js";
+script2.type = "text/javascript";
 console.log("From Jsdeliver")
-script.onreadystatechange = handlertag;
-script.onload = handlertag;
-document.getElementsByTagName('head')[0].appendChild(script)
+script2.onreadystatechange = handlertag;
+script2.onload = handlertag;
+document.getElementsByTagName('head')[0].appendChild(script2)
 
 
 
