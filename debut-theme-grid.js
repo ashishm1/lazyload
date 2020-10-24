@@ -5,30 +5,40 @@ console.log("In debut script")
 script.onreadystatechange = handler;
 // script.displayscope = "ALL"
 document.getElementsByTagName('head')[0].appendChild(script)
-    //script.onload = handler(data);
+// script.onload = handler();
 
 // function makeHeader(data) {
     
 // }
 
 
-
 function handler() {
 
     console.log("This is debut theme api!!!!!!!")
 
-    const body = $('body');
     const head = $('head');
+    head.appendChild(`<script>document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`);
     head.appendChild(`<script src="https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937" type="text/javascript"></script>`);
-    head.appendChild('<script>document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>');
-    const ul_tag = $('ul.grid').setAttribute("id", "LazyLoader-Loop");
-    const next_page_tag = $('a.btn btn--tertiary btn--narrow').setAttribute("id", "LazyLoader-Pagination");
+    if($('ul.grid').length > 0) {
+        console.log("In ul grid")
+        $('ul.grid').attr("id", "LazyLoader-Loop");
+    }
+        ll = $('a.btn--narrow').length;
+    if (ll > 1) {
+        console.log("IN more than one arrows")
+        tt = $('a.btn--narrow')[1]; tt.setAttribute("id", "LazyLoader-Pagination")
+    } 
+    else if ($('a.btn--narrow').length > 0 ) {
+        console.log("In next arrow")
+        $('a.btn--narrow').attr("id", "LazyLoader-Pagination")
+    }
 }
 
 
 // fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
 //     .then(res => res.json())
+//     .then(console.log("Fetched"))
 //     .then(data => {
-//         handler(data.data)
+//         handler()
 //     })
 //     .catch(error => console.log(error))
