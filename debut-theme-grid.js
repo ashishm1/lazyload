@@ -31,9 +31,9 @@ function handlertag() {
 }
 
 
-// fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
-//     .then(res => res.json())
-//     .then(console.log("Fetched"))
-//     .then(handler())
-//     .catch(error => console.log(error))
+fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
+    .then(res => res.json())
+    .then(console.log("Fetched"))
+    .then(handler())
+    .catch(error => console.log(error))
 
