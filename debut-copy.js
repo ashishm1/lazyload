@@ -8,7 +8,12 @@ try{
     document.getElementsByTagName('head')[0].appendChild(script2);
 }
 catch(err){
-    console.log(err);    
+    console.log(err);
+    fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
+    .then(res => res.json())
+    .then(console.log("Fetched"))
+    .then(handlertag())
+    .catch(error => console.log(error))
 }
 
 
@@ -17,8 +22,8 @@ function handlertag() {
     console.log("This is debut theme api!!!!!!!")
 
     const head = $('head');
-    head.append(`<script>document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`);
     head.append(`<script src="https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937" type="text/javascript"></script>`);
+    head.append(`<script>document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`);
     if($('ul.grid').length > 0) {
         console.log("In ul grid")
         $('ul.grid').attr("id", "LazyLoader-Loop");
@@ -35,9 +40,5 @@ function handlertag() {
 }
 
 
-fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
-    .then(res => res.json())
-    .then(console.log("Fetched"))
-    .then(handlertag())
-    .catch(error => console.log(error))
+
 
