@@ -2,13 +2,13 @@ const script = document.createElement('script');
 script.src = "https://code.jquery.com/jquery-3.5.1.min.js";
 script.type = "text/javascript";
 console.log("From Jsdeliver")
-script.onreadystatechange = handler();
-script.onload = handler();
+script.onreadystatechange = handlertag;
+script.onload = handlertag;
 document.getElementsByTagName('head')[0].appendChild(script)
 
 
 
-function handler() {
+function handlertag() {
 
     console.log("This is debut theme api!!!!!!!")
 
@@ -28,7 +28,7 @@ function handler() {
         console.log("In next arrow")
         $('a.btn--narrow').attr("id", "LazyLoader-Pagination")
     }
-
+}
 
 
 // fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
@@ -36,4 +36,4 @@ function handler() {
 //     .then(console.log("Fetched"))
 //     .then(handler())
 //     .catch(error => console.log(error))
-}
+
