@@ -22,8 +22,8 @@ function handlertag() {
     console.log("This is debut theme api!!!!!!!")
 
     const head = $('head');
-    head.append(`<script src="https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937" type="text/javascript"></script><script>document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`);
-    
+    head.append(`<script src="https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937" type="text/javascript"></script>`);
+    $('body').append(`<script>document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`)
     if($('ul.grid').length > 0) {
         console.log("In ul grid")
         $('ul.grid').attr("id", "LazyLoader-Loop");
