@@ -9,11 +9,11 @@ try{
 }
 catch(err){
     console.log(err);
-    fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
-    .then(res => res.json())
-    .then(console.log("Fetched"))
-    .then(handlertag())
-    .catch(error => console.log(error))
+//     fetch('https://ashish-load.herokuapp.com/api/lazyload?shop=shop=sample-store-15.myshopify.com')
+//     .then(res => res.json())
+//     .then(console.log("Fetched"))
+//     .then(handlertag())
+//     .catch(error => console.log(error))
 }
 
 
@@ -30,7 +30,7 @@ function handlertag() {
     }
     catch(err){
         console.log(err);
-        addAjax();
+//         addAjax();
     }
     }
 
