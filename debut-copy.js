@@ -26,11 +26,11 @@ function handlertag() {
         ll = $('a.btn--narrow').length;
     if (ll > 1) {
         console.log("IN more than one arrows")
-        tt = $('a.btn--narrow')[1]; tt.setAttribute("id", "LazyLoader-Pagination")
+        tt = $('a.btn--narrow')[1]; tt.parent().setAttribute("id", "LazyLoader-Pagination")
     } 
     else if ($('a.btn--narrow').length > 0 ) {
         console.log("In next arrow")
-        $('a.btn--narrow').attr("id", "LazyLoader-Pagination")
+        $('a.btn--narrow').parent().attr("id", "LazyLoader-Pagination")
     }
 }
 
