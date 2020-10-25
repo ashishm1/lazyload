@@ -44,12 +44,15 @@ function addAjax(){
         ll = $('a.btn--narrow').length;
     if (ll > 1) {
         console.log("IN more than one arrows")
-        tt = $('a.btn--narrow')[1]; tt.parent().setAttribute("id", "LazyLoader-Pagination")
+        tt = $('a.btn--narrow')[1]; tt.parentElement.setAttribute("id", "LazyLoader-Pagination")
     } 
     else if ($('a.btn--narrow').length > 0 ) {
         console.log("In next arrow")
         $('a.btn--narrow').parent().attr("id", "LazyLoader-Pagination")
+        
 }
+        document.querySelectorAll('ul.pagination')[0].querySelectorAll('li')[1].innerText = "";
+        document.querySelectorAll('ul.pagination')[0].querySelectorAll('li')[0].remove();
         $('main').append(`<script>var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`)
 
 
