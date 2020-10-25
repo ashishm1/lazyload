@@ -50,7 +50,8 @@ function addAjax(){
         console.log("In next arrow")
         $('a.btn--narrow').parent().attr("id", "LazyLoader-Pagination")
 }
-        $('body').append(`<script>window.addEventListener("load", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`)
+        $('main').append(`<script>var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination"});});</script>`)
+
 
 }
 
