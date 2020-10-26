@@ -46,8 +46,8 @@ function addAjax(){
         }
     document.querySelectorAll('ul.pagination')[0].querySelectorAll('li')[1].innerText = "";
     document.querySelectorAll('ul.pagination')[0].querySelectorAll('li')[0].remove();
-    console.log(orientation)
-    $('main').append(`<script>var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination", orientation: orientation});document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination", orientation: orientation});});</script>`)
+    
+    $('main').append(`<script>var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination", orientation: ${orientation}});document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination", orientation: ${orientation}});});</script>`)
 
 
 }
