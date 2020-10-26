@@ -31,7 +31,7 @@ function handlertag() {
 
 function addAjax(){
     
-    if($('ul.grid').length > 0) 
+    if($('ul.grid').length > 0) {
         $('ul.grid').attr("id", "LazyLoader-Loop");
         var orientation = 'ul.grid';
         }
