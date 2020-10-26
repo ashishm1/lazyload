@@ -30,14 +30,15 @@ function handlertag() {
     }
 
 function addAjax(){
+    var orientation;
     
     if($('ul.grid').length > 0) {
         $('ul.grid').attr("id", "LazyLoader-Loop");
-        var orientation = 'ul.grid';
+        orientation = 'ul.grid';
         }
     else if($('ul.list-view-items').length > 0) {
         $('ul.list-view-items').attr("id", "LazyLoader-Loop");
-        var orientation = 'ul.list-view-items'
+        orientation = 'ul.list-view-items'
         }
     
     ll = $('a.btn--narrow').length;
@@ -49,6 +50,7 @@ function addAjax(){
         }
     document.querySelectorAll('ul.pagination')[0].querySelectorAll('li')[1].innerText = "";
     document.querySelectorAll('ul.pagination')[0].querySelectorAll('li')[0].remove();
+    console.log(orientation)
     $('main').append(`<script>var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination", orientation: orientation});document.addEventListener("DOMContentLoaded", function() { var endlessScroll = new Ajaxinate({container: "#LazyLoader-Loop", pagination: "#LazyLoader-Pagination", orientation: orientation});});</script>`)
 
 
