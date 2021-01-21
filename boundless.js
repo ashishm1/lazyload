@@ -18,7 +18,7 @@ function handlertag() {
         lazyscript.onload = addAjax;
         lazyscript.onreadystatechange = addAjax;
         lazyscript.type = "text/javascript";
-        lazyscript.src = "https://cdn.shopify.com/s/files/1/0382/4185/files/ajaxinate.js?937";
+        lazyscript.src = "https://cdn.jsdelivr.net/gh/ashishm1/lazyload@main/ajaxinate-boundless.js";
     }
     catch(err){
         console.log(err);
