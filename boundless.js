@@ -26,11 +26,15 @@ function handlertag() {
     }
 
 function addAjax(){
+
+    $('div.collection-grid').attr("id", "LazyLoader-Loop")
     
     ll = $('div.pagination span.next').length;
     if (ll > 0) {
         tt = $('div.pagination span.next')[0]; tt.parentElement.setAttribute("id", "LazyLoader-Pagination")
         } 
+        
+    //Remove Left arrow
     //document.querySelectorAll('ul.pagination')[0].querySelectorAll('li')[1].innerText = "";
     //document.querySelectorAll('ul.pagination')[0].querySelectorAll('li')[0].remove();
     
