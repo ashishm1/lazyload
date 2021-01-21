@@ -46,7 +46,7 @@ function addAjax(){
         $('div.grid-collage').attr("id", "LazyLoader-Loop")
         } 
         
-    //Remove Left arrow
+    //Remove arrow
     //document.querySelectorAll('ul.pagination')[0].querySelectorAll('li')[1].innerText = "";
     //document.querySelectorAll('ul.pagination')[0].querySelectorAll('li')[0].remove();
     
@@ -54,4 +54,3 @@ function addAjax(){
 
 
 }
-
