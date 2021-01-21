@@ -27,11 +27,12 @@ function handlertag() {
 
 function addAjax(){
 
-    $('div.collection-grid').attr("id", "LazyLoader-Loop")
+    
     
     ll = $('div.pagination span.next').length;
     if (ll > 0) {
         tt = $('div.pagination span.next')[0]; tt.parentElement.setAttribute("id", "LazyLoader-Pagination")
+        $('div.collection-grid').attr("id", "LazyLoader-Loop")
         } 
         
     //Remove Left arrow
